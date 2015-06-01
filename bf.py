@@ -7,12 +7,14 @@ def fetchData(url):
 
 def getData(args):
 	types = { 
-		'latest'	:'', 
+		'latest'	:'version', 
 		'leaked'	:'leaked',
 		'added'		:'added',
 		'highest'	:'version',
-		'flights'	:'flight'
+		'flights'	:'flight',
+		'branch'	:'lab'
 	}
+
 
 	risk = '';
 
@@ -20,6 +22,9 @@ def getData(args):
 
 	if args.type is 'flights':
 		risk = args.risk if args.risk in availableFlights else 'high'
+
+	if args.type is 'branch':
+		risk = args.lab
 
 	# Fetch the data
 	d = fetchData('https://buildfeed.net/rss/' + types[args.type] + '/' + risk)
@@ -54,6 +59,11 @@ if __name__ == '__main__':
 	flights_p = subparsers.add_parser('flights')
 	flights_p.add_argument('-r', '--risk', default='high', dest='risk')
 	flights_p.set_defaults(func=getData, type='flights')
+
+	# Branch
+	branch_p = subparsers.add_parser('branch')
+	branch_p.add_argument('-b', '--branch', default='winmain', dest='lab')
+	branch_p.set_defaults(func=getData, type='branch')
 
 	# Args
 	args = parser.parse_args()

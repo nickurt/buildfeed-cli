@@ -24,6 +24,11 @@ Retrieve the flights builds (logging/win10) from BuildFeed
     bf.py flights -r medium     // medium (osg ring)
     bf.py flights -r high       // high (canary ring)
 
+#### Branch
+Retrieve the latest builds from a branch
+
+    bf.py branch -b fbl_mgmt
+
 #### Help
 
     bf.py -h
