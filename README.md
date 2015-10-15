@@ -23,7 +23,7 @@ Retrieve the flights builds (logging/win10) from BuildFeed
     bf.py flights -r wis        // Windows Insider Slow
     bf.py flights -r wif		// Windows Insider Fast
 
-    bf.py flights -r msit       // Micorsoft Internal
+    bf.py flights -r msit       // Microsoft Internal
     bf.py flights -r osg        // Operating Systems Group
     bf.py flights -r canary     // Canary
 
