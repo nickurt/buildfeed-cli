@@ -20,9 +20,12 @@ Retrieve the highest builds from BuildFeed
 #### Flights
 Retrieve the flights builds (logging/win10) from BuildFeed
 
-    bf.py flights -r low        // low (external ring)
-    bf.py flights -r medium     // medium (osg ring)
-    bf.py flights -r high       // high (canary ring)
+    bf.py flights -r wis        // Windows Insider Slow
+    bf.py flights -r wif		// Windows Insider Fast
+
+    bf.py flights -r msit       // Micorsoft Internal
+    bf.py flights -r osg        // Operating Systems Group
+    bf.py flights -r canary     // Canary
 
 #### Branch
 Retrieve the latest builds from a branch

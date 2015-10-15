@@ -18,10 +18,10 @@ def getData(args):
 
 	risk = '';
 
-	availableFlights = ['low', 'medium', 'high']
+	availableFlights = ['canary', 'osg', 'msit', 'wif', 'wis']
 
 	if args.type is 'flights':
-		risk = args.risk if args.risk in availableFlights else 'high'
+		risk = args.risk if args.risk in availableFlights else 'wif'
 
 	if args.type is 'branch':
 		risk = args.lab
@@ -36,7 +36,7 @@ if __name__ == '__main__':
 
 	# Parser
 	parser = argparse.ArgumentParser(prog='BuildFeed')
-	parser.add_argument('--version', action='version', version='%(prog)s 0.1.1')
+	parser.add_argument('--version', action='version', version='%(prog)s 0.2.1')
 	subparsers = parser.add_subparsers()
 
 	# Latest
